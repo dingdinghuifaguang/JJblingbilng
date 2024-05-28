@@ -4,12 +4,12 @@
 void menu()
 {
 	printf("******************************************\n");
-	printf("*********1.Ìí¼Ó         2.É¾³ı    ********\n");
-	printf("*********3.²éÕÒ         4.ÏÔÊ¾    *******\n");
-	printf("*********5.½èÔÄ         6.¹é»¹    ********\n");
-	printf("*********7.±£´æ         8.ÅÅÁĞ    ********\n");
-	printf("*********0.ÍË³ö***************************\n");
-	printf("ÇëÑ¡Ôñ£º>\n");
+	printf("*********1.æ·»åŠ          2.åˆ é™¤    ********\n");
+	printf("*********3.æŸ¥æ‰¾         4.æ˜¾ç¤º    *******\n");
+	printf("*********5.å€Ÿé˜…         6.å½’è¿˜    ********\n");
+	printf("*********7.ä¿å­˜         8.æ’åˆ—    ********\n");
+	printf("*********0.é€€å‡º***************************\n");
+	printf("è¯·é€‰æ‹©ï¼š>\n");
 }
 int main()
 {
@@ -23,24 +23,24 @@ int main()
 		menu();
 		scanf("%d", &input);
 
-		switch (input)//Switchº¯ÊıÑ¡Ôñ½çÃæ
+		switch (input)//Switchå‡½æ•°é€‰æ‹©ç•Œé¢
 		{
 		case ADD:
-			printf("ÇëÊäÈëÒªÂ¼ÈëÊéÃû\n");
+			printf("è¯·è¾“å…¥è¦å½•å…¥ä¹¦å\n");
 			scanf("%s", tempbook.name);
-			printf("ÇëÊäÈë¼Û¸ñ\n");
+			printf("è¯·è¾“å…¥ä»·æ ¼\n");
 			scanf("%lf", &tempbook.price);
-			printf("ÇëÊäÈëÊıÁ¿\n");
+			printf("è¯·è¾“å…¥æ•°é‡\n");
 			scanf("%d", &tempbook.num);
 			insertNodeByHead(HeadNode, tempbook);
 			break;
 		case DEL:
-			printf("ÇëÊäÈëÒªÉ¾³ıµÄÊéÃû\n");
+			printf("è¯·è¾“å…¥è¦åˆ é™¤çš„ä¹¦å\n");
 			scanf("%s", tempbook.name);
 			delNodeByname(HeadNode, tempbook.name);
 			break;
 		case SEARCH:
-			printf("ÇëÊäÈëÒª²éÕÒµÄÊéÃû\n");
+			printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ä¹¦å\n");
 			scanf("%s", tempbook.name);
 			SearchBook(HeadNode, tempbook.name);
 			break;
@@ -48,38 +48,38 @@ int main()
 			Print(HeadNode);
 			break;
 		case BORROW:
-			printf("ÇëÊäÈë½èÔÄµÄÊéÃû£º");
+			printf("è¯·è¾“å…¥å€Ÿé˜…çš„ä¹¦åï¼š");
 			scanf("%s", tempbook.name);
 			result = SearchBook(HeadNode, tempbook.name);
 			if (result == NULL)
 			{
-				printf("Ã»ÓĞÕÒµ½Ïà¹ØÊé¼®£¬ÎŞ·¨½èÔÄ¡£\n");
+				printf("æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ä¹¦ç±ï¼Œæ— æ³•å€Ÿé˜…ã€‚\n");
 			}
 			else
 			{
 				if (result->data.num >= 1)
 				{
 					result->data.num--;
-					printf("½èÔÄ³É¹¦¡£\n");
+					printf("å€Ÿé˜…æˆåŠŸã€‚\n");
 				}
 				else
 				{
-					printf("µ±Ç°Êé±¾ÔİÎŞ¿â´æ£¬½èÔÄÊ§°Ü£¡\n");
+					printf("å½“å‰ä¹¦æœ¬æš‚æ— åº“å­˜ï¼Œå€Ÿé˜…å¤±è´¥ï¼\n");
 				}
 			}
 			break;
 		case RETURN:
-			printf("ÇëÊäÈë¹é»¹µÄÊéÃû£º");
+			printf("è¯·è¾“å…¥å½’è¿˜çš„ä¹¦åï¼š");
 			scanf("%s", tempbook.name);
 			result = SearchBook(HeadNode, tempbook.name);
 			if (result == NULL)
 			{
-				printf("¸ÃÊé²»ÊôÓÚÍ¼Êé¹İ£¡");
+				printf("è¯¥ä¹¦ä¸å±äºå›¾ä¹¦é¦†ï¼");
 			}
 			else
 			{
 				result->data.num++;
-				printf("¹é»¹³É¹¦¡£\n");
+				printf("å½’è¿˜æˆåŠŸã€‚\n");
 			}
 			break;
 
